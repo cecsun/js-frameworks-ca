@@ -1,10 +1,11 @@
 import React from 'react';
-import SHeader from './Header.styles';
+import * as S from './Header.styles';
+import Nav from './Nav';
 
 const Header = () => (
-  <SHeader>
-    <h1>Header</h1>
-  </SHeader>
+  <S.Header>
+    <Nav />
+  </S.Header>
 );
 
 export default Header;
