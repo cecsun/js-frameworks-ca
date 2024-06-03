@@ -10,7 +10,7 @@ function Nav() {
                 <S.StyledLink to="/">Home</S.StyledLink>
             </S.NavItem>
             <S.NavItem>
-                <S.StyledLink to="/contact">Contact</S.StyledLink>
+                <S.StyledLink to="/contactPage">Contact</S.StyledLink>
             </S.NavItem>
             <CartIcon />
         </S.NavList>
