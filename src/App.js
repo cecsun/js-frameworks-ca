@@ -1,24 +1,27 @@
 import React from 'react';
-import { Layout } from './components/Layout/Layout';
-import { Routes, Route } from 'react-router-dom';
-// import { Home } from './Pages/Home/Home';
-import Home from './Pages/Home/Home';
-import { Contact } from './Pages/Contact/Contact';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './index.css';
+import { Layout } from './components/Layout/index.jsx';
+import HomePage from './Pages/HomePage/index.jsx';
+import ProductsPage from './Pages/ProductsPage/index.jsx';
+import SingleProductPage from './Pages/SingleProductPage/index.jsx';
 import { RouteNotFound } from './Pages/RouteNotFound/RouteNotFound';
-import { Product } from './Pages/Product/Product';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="product/:id" element={<Product />} />
-          <Route path="*" element={<RouteNotFound />} />
-        </Route>
-      </Routes>
-    </div>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/product/:id" element={<SingleProductPage />} />
+            <Route path="*" element={<RouteNotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
