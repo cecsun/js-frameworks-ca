@@ -1,12 +1,5 @@
-// import React from "react";
-
-// function Contact() {
-//     return <div>ContactPage</div>
-//   }
-
-// export default Contact;
-
 import React, { useState } from 'react';
+import * as S from './index.styles';
 
 function ContactPage() {
   const [fullName, setFullName] = useState('');
@@ -33,7 +26,7 @@ function ContactPage() {
       setMessage('');
       setTimeout(() => {
         setFormSubmit('');
-      }, 2000);
+      }, 4000);
     }, 500);
   }
 
@@ -56,55 +49,58 @@ function ContactPage() {
   }
 
   return (
-    <div>
-      <form onSubmit={onFormSubmit}>
-        <div>
-          <label htmlFor="full-name">Full name</label>
-          <input
-            name="full-name"
-            value={fullName}
-            placeholder="Your full name"
-            onChange={onTextInputChange}
-            required
-            minLength="3"
-          />
-        </div>
-        <div>
-          <label htmlFor="subject">Subject</label>
-          <input
-            name="subject"
-            value={subject}
-            placeholder="Subject"
-            onChange={onTextInputChange}
-            required
-            minLength="3"
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            name="email"
-            value={email}
-            placeholder="Your email"
-            onChange={onTextInputChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message</label>
-          <input
-            name="message"
-            value={message}
-            placeholder="Your message"
-            onChange={onTextInputChange}
-            required
-            minLength="3"
-          />
-        </div>
-        <button>Submit</button>
-      </form>
-      {formSubmit && <div>{formSubmit}</div>}
-    </div>
+    <S.Container>
+      <S.FormWrapper>
+        <S.Heading>Contact us</S.Heading>
+        <S.Form onSubmit={onFormSubmit}>
+          <div>
+            <S.Label htmlFor="full-name">Full name</S.Label>
+            <S.Input
+              name="full-name"
+              value={fullName}
+              placeholder="Your full name"
+              onChange={onTextInputChange}
+              required
+              minLength="3"
+            />
+          </div>
+          <div>
+            <S.Label htmlFor="subject">Subject</S.Label>
+            <S.Input
+              name="subject"
+              value={subject}
+              placeholder="Subject of your message"
+              onChange={onTextInputChange}
+              required
+              minLength="3"
+            />
+          </div>
+          <div>
+            <S.Label htmlFor="email">Email</S.Label>
+            <S.Input
+              name="email"
+              value={email}
+              placeholder="Your email"
+              onChange={onTextInputChange}
+              required
+            />
+          </div>
+          <div>
+            <S.Label htmlFor="message">Message</S.Label>
+            <S.Input
+              name="message"
+              value={message}
+              placeholder="Your message"
+              onChange={onTextInputChange}
+              required
+              minLength="3"
+            />
+          </div>
+          <S.Button>Submit</S.Button>
+        </S.Form>
+        {formSubmit && <S.Message>{formSubmit}</S.Message>}
+      </S.FormWrapper>
+    </S.Container>
   );
 }
 
