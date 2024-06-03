@@ -1,5 +1,11 @@
+import ProductsList from '../../components/ProductsList';
+
 function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <ProductsList />
+    </div>
+  );
 }
 
 export default HomePage;
