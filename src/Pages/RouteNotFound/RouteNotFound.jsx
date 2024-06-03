@@ -1,5 +1,7 @@
 import React from "react";
 
-export function RouteNotFound() {
+function RouteNotFound() {
     return <div>RouteNotFound</div>
   }
+
+export default RouteNotFound;

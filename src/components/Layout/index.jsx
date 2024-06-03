@@ -2,7 +2,7 @@ import { Header } from "../Header/index.jsx";
 import { Outlet } from "react-router-dom";
 import { Footer } from "../Footer/index.jsx";
 
-export function Layout() {
+function Layout() {
     return (
     <div>
         <Header />
@@ -12,3 +12,4 @@ export function Layout() {
   );
 };
   
+export default Layout;
