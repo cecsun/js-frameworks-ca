@@ -1,4 +1,4 @@
-import Product from '../Product';
+import Product from '../Product/index';
 import { API_PRODUCTS_URL } from '../../common/constants';
 import { useFetch } from '../../hooks/useFetch';
 import { useContext } from 'react';
