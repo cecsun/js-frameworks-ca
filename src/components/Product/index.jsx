@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import * as S from './index.styles.js';
 
 export default function Product({
   productDetails,
@@ -10,14 +11,14 @@ export default function Product({
   }
 
   return (
-    <div>
+    <S.ProductsContainer>
       <h3>{title}</h3>
-      <img src={image.url} alt={title} />
+      <img src={image.url} alt={title} style={{ width: '100%', height: '100%' }} />
       <p>{description}</p>
-      <div>{discountedPrice}</div>
-      <div>{price}</div>
-      <Link to={`/product/${id}`}>View</Link>
-      <button onClick={handleButtonClick}>Add to cart</button>
-    </div>
+      <S.DiscountedPrice>{discountedPrice}</S.DiscountedPrice>
+      <S.Price>{price}</S.Price>
+      <S.StyledLink to={`/product/${id}`}>View</S.StyledLink>
+      <S.Button onClick={handleButtonClick}>Add to cart</S.Button>
+    </S.ProductsContainer>
   );
 }
