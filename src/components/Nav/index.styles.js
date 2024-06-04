@@ -13,7 +13,8 @@ export const NavList = styled.ul`
 
 export const NavItem = styled.li`
     list-style-type: none;
-    margin: 0 20px;
+    margin-right: 40px;
+    margin-left: 20px;
 `;
 
 export const StyledLink = styled(Link)`
