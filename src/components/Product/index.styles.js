@@ -6,6 +6,7 @@ export const ProductsContainer = styled.div`
     max-width: 300px;
     margin: auto;
     text-align: center;
+    border-radius: 10px;
 `;
 
 export const DiscountedPrice = styled.div`
@@ -17,6 +18,26 @@ export const Price = styled.div`
     color: grey;
     font-size: 22px;
     text-decoration: line-through;
+    margin-bottom: 20px;
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    }
+    button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: blue;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
 `;
 
 export const Button = styled.button`
@@ -29,18 +50,11 @@ export const Button = styled.button`
     cursor: pointer;
     width: 100%;
     font-size: 18px;
+    border-radius: 0 0 10px 10px;
     &:hover {
-        background-color: #555;
+        opacity: 0.7;
     }
 `;
 
-export const StyledLink = styled(Link)`
-    color: black;
-    background-color: blue;
-    text-decoration: none;
-    font-size: 20px;
-    &:hover {
-        color: red;
-    }
-`;
+
 
