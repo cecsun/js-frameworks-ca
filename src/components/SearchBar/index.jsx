@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import * as S from './index.styles.js';
 
 function SearchBar({ products, onSearch }) {
-  const [query, setQuery] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState([]);
+    const [query, setQuery] = useState('');
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const navigate = useNavigate();
 
   useEffect(() => {
     if (query.length === 0) {
@@ -20,8 +23,12 @@ function SearchBar({ products, onSearch }) {
     onSearch(e.target.value);
   };
 
+  const handleProductClick = (productId) => {
+    navigate(`/product/${productId}`);
+  };
+
   return (
-    <div>
+    <S.SearchWrapper>
       <input
         type="text"
         value={query}
@@ -31,11 +38,13 @@ function SearchBar({ products, onSearch }) {
       {filteredProducts.length > 0 && (
         <ul>
           {filteredProducts.map((product) => (
-            <li key={product.id}>{product.title}</li>
+            <li key={product.id} onClick={() => handleProductClick(product.id)}>
+                {product.title}
+            </li>
           ))}
         </ul>
       )}
-    </div>
+    </S.SearchWrapper>
   );
 }
 
