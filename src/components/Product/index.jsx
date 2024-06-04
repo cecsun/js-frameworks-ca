@@ -1,14 +1,10 @@
-/* eslint-disable react/prop-types */
-
 import { Link } from 'react-router-dom';
-
-// http://localhost:5173/product/109566af-c5c2-4f87-86cb-76f36fb8d378
 
 export default function Product({
   productDetails,
   handleAddToCartButtonClick,
 }) {
-  const { description, discountedPrice, price, title, id } = productDetails;
+  const { description, discountedPrice, image, price, title, id } = productDetails;
   function handleButtonClick() {
     handleAddToCartButtonClick(productDetails);
   }
@@ -16,6 +12,7 @@ export default function Product({
   return (
     <div>
       <h3>{title}</h3>
+      <img src={image.url} alt={title} />
       <p>{description}</p>
       <div>{discountedPrice}</div>
       <div>{price}</div>
