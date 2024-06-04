@@ -4,7 +4,7 @@ import { CartContext } from '../../context/CartContext';
 const SIZE = '15';
 
 function CartIcon() {
-  const { cart, addToCart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   return (
     <div>
       <div
