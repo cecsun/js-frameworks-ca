@@ -4,20 +4,24 @@ import { Link } from "react-router-dom";
 export const ProductsContainer = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
+    width: 100%;
+    height: 500px;
     margin: auto;
     text-align: center;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `;
 
 export const DiscountedPrice = styled.div`
     color: red;
-    font-size: 24px;
+    font-size: 20px;
 `;
 
 export const Price = styled.div`
-    color: grey;
-    font-size: 22px;
-    text-decoration: line-through;
+    color: black;
+    font-size: 20px;
     margin-bottom: 20px;
 `;
 
