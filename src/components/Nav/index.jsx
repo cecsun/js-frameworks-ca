@@ -5,6 +5,7 @@ import CartIcon from "../CartIcon/index.jsx";
 function Nav() {
   return (
     <S.Navbar>
+        <S.Logo><div>eCom store</div></S.Logo>
         <S.NavList>
             <S.NavItem>
                 <S.StyledLink to="/">Home</S.StyledLink>

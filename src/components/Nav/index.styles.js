@@ -2,9 +2,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Navbar = styled.nav`
-  background-color: red;
-  display: flex;
-  justify-content: right;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const Logo = styled.div`
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    font-weight: bold;
 `;
 
 export const NavList = styled.ul`
