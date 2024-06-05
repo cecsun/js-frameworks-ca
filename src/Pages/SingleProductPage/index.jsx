@@ -3,6 +3,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { API_SINGLE_PRODUCT_URL } from '../../common/constants';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import * as S from './index.styles';
 
 function SingleProductPage() {
   const params = useParams();
@@ -28,23 +29,23 @@ function SingleProductPage() {
   console.log(data)
   if (data) {
     return (
-      <div>
+      <S.SingleProductContainer>
+        <S.Image>{data?.data?.image.url && <img src={data?.data?.image.url} alt={data?.data?.title} />}</S.Image>
         <ul>
-          <li>Title: {data?.data?.title} </li>
-          <li>Description: {data?.data?.description} </li>
-          {data?.data?.discountedPrice < data?.data?.price && <li>Discounted Price: {data?.data?.discountedPrice}</li>}
-          <li>Price: {data?.data?.price}</li>
+          <S.Title>{data?.data?.title} </S.Title>
+          <S.Description>{data?.data?.description} </S.Description>
+          <S.DiscountedPrice>{data?.data?.discountedPrice < data?.data?.price && <li>{data?.data?.discountedPrice}</li>}</S.DiscountedPrice>
+          <S.Price>{data?.data?.price}</S.Price>
           {data?.data?.reviews.map((review) => (
-            <div key={review.id}>
-              <li>Review: {review.username}</li>
+            <S.Reviews key={review.id}><p>Reviews:</p>
+              <li>Username: {review.username}</li>
               <li>Rating: {review.rating}</li>
-              <li>Comment: {review.description}</li>
-            </div>
+              <li>"{review.description}"</li>
+            </S.Reviews>
           ))}
         </ul>
-        {data?.data?.image.url && <img src={data?.data?.image.url} alt={data?.data?.title} />}
         <button onClick={handleButtonClick}>Add to cart</button>
-      </div>
+      </S.SingleProductContainer>
     );
   }
 
