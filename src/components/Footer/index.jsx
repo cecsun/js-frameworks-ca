@@ -1,5 +1,6 @@
 import React from 'react';
+import * as S from './index.styles';
 
 export function Footer() {
-    return <footer>Footer</footer>
+    return <S.Footer>&copy; 2024 eCom store. All rights reserved.</S.Footer>
   }
