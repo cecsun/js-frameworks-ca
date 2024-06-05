@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     background-color: #f8f9fa;
 `;
 
@@ -15,6 +15,7 @@ export const FormWrapper = styled.div`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
+    margin: 40px 0;
 `;
 
 export const Heading = styled.h1`
@@ -56,7 +57,6 @@ export const Button = styled.button`
     cursor: pointer;
     width: 50%;
     align-self: center;
-
     &:hover {
         background-color: #0056b3;
     }
