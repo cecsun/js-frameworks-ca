@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import * as S from './index.styles.js';
 
 export default function Product({
