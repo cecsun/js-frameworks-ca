@@ -5,6 +5,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import SearchBar from '../SearchBar/index';
+import * as S from './index.styles';
 
 function ProductsList() {
   const { addToCart } = useContext(CartContext);
@@ -44,7 +45,7 @@ function ProductsList() {
     <div>
       <SearchBar products={data?.data || []} onSearch={handleSearch} />
       {filteredProducts.length > 0 ? (
-        <div>
+        <S.ProductsGrid>
           {filteredProducts.map((productDetails) => (
             <Product
               key={productDetails.id}
@@ -52,7 +53,7 @@ function ProductsList() {
               handleAddToCartButtonClick={handleAddToCartButtonClick}
             />
           ))}
-        </div>
+        </S.ProductsGrid>
       ) : (
         <div>No products found</div>
       )}
