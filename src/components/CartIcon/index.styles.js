@@ -11,10 +11,13 @@ export const CartWrapper = styled.div`
 
 export const CartIcon = styled.div`
     font-size: 25px;
+    &:hover {
+        color: red;
+    }
 `;
 
 export const CartNumber = styled.div`
-    background: blue;
+    background: red;
     border-radius: 50%;
     display: flex;
     justify-content: center;
