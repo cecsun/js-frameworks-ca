@@ -15,7 +15,6 @@ function CheckoutPage() {
 
     function handleCheckoutButtonClick() {
       navigate('/checkoutSuccessPage');
-      window.location.reload();
     }
 
     return (
