@@ -6,7 +6,7 @@ import * as S from "./index.styles";
 import { useNavigate } from "react-router-dom";
 
 function CheckoutPage() {
-    const { cart, removeFromCart } = useContext(CartContext);
+    const { cart, removeFromCart, clearCart } = useContext(CartContext);
     const navigate = useNavigate();
 
     function handleRemoveFromCartButtonClick(productDetails) {
@@ -14,6 +14,7 @@ function CheckoutPage() {
     }
 
     function handleCheckoutButtonClick() {
+      clearCart();
       navigate('/checkoutSuccessPage');
     }
 
