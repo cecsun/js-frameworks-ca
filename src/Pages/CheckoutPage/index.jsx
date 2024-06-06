@@ -3,15 +3,19 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import Product from '../../components/Product';
 import * as S from "./index.styles";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutPage() {
     const { cart, removeFromCart } = useContext(CartContext);
+    const navigate = useNavigate();
+
     function handleRemoveFromCartButtonClick(productDetails) {
       removeFromCart(productDetails.id);
     }
 
     function handleCheckoutButtonClick() {
-      window.location.href = '/checkoutSuccessPage';
+      navigate('/checkoutSuccessPage');
+      window.location.reload();
     }
 
     return (
