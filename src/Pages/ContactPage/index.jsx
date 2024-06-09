@@ -80,6 +80,7 @@ function ContactPage() {
             <S.Input
               name="email"
               value={email}
+              type="email"
               placeholder="Your email"
               onChange={onTextInputChange}
               required
