@@ -13,6 +13,8 @@ function SingleProductPage() {
 
   const { addToCart } = useContext(CartContext);
 
+  const discountPercentage = ((data?.data?.price - data?.data?.discountedPrice) / data?.data?.price) * 100;
+
   const handleButtonClick = () => {
     if (data?.data) {
       addToCart(data.data);
@@ -34,7 +36,12 @@ function SingleProductPage() {
         <ul>
           <S.Title>{data?.data?.title} </S.Title>
           <S.Description>{data?.data?.description} </S.Description>
-          <S.DiscountedPrice>{data?.data?.discountedPrice < data?.data?.price && <li>{data?.data?.discountedPrice}</li>}</S.DiscountedPrice>
+          {data?.data?.discountedPrice < data?.data?.price && (
+            <S.DiscountedPrice>
+              {data?.data?.discountedPrice}
+              <S.DiscountPercentage>{discountPercentage.toFixed(2)}% off</S.DiscountPercentage>
+            </S.DiscountedPrice>
+          )}
           <S.Price>{data?.data?.price}</S.Price>
           {data?.data?.reviews.map((review) => (
             <S.Reviews key={review.id}><p>Reviews:</p>

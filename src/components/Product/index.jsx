@@ -1,3 +1,4 @@
+import React from 'react';
 import * as S from './index.styles.js';
 
 export default function Product({
@@ -7,6 +8,9 @@ export default function Product({
   checkout = false,
 }) {
   const { description, discountedPrice, image, price, title, id } = productDetails;
+  
+  const discountPercentage = ((price - discountedPrice) / price) * 100;
+  
   function handleButtonClick() {
     checkout ? handleRemoveFromCartButtonClick(productDetails) : handleAddToCartButtonClick(productDetails);
   }
@@ -16,7 +20,14 @@ export default function Product({
       <h3>{title}</h3>
       <img src={image.url} alt={title} style={{ width: '100%', height: '100%' }} />
       <p>{description}</p>
-      {discountedPrice < price && <S.DiscountedPrice>{discountedPrice}</S.DiscountedPrice>}
+      {discountedPrice < price && (
+        <>
+          <S.DiscountedPrice>{discountedPrice}</S.DiscountedPrice>
+          <S.DiscountPercentage>
+            {discountPercentage.toFixed(2)}% off
+          </S.DiscountPercentage>
+        </>
+      )} 
       <S.Price>{price}</S.Price>
       <S.StyledLink to={`/product/${id}`}>
         <button>View Product</button>

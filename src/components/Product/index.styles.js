@@ -19,6 +19,12 @@ export const DiscountedPrice = styled.div`
     font-size: 20px;
 `;
 
+export const DiscountPercentage = styled.span`
+    color: red;
+    font-weight: bold;
+    margin-left: 10px;
+`;
+
 export const Price = styled.div`
     color: black;
     font-size: 20px;

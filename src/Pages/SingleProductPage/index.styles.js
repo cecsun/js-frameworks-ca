@@ -53,6 +53,12 @@ export const DiscountedPrice = styled.div`
     color: red;
 `;
 
+export const DiscountPercentage = styled.span`
+    color: red;
+    font-weight: bold;
+    margin-left: 10px;
+`;
+
 export const Price = styled.li`
     text-align: center;
 `;
