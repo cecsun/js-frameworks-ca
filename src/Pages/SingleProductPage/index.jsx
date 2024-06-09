@@ -28,7 +28,7 @@ function SingleProductPage() {
   if (hasError) {
     return <div>Error loading data</div>;
   }
-  console.log(data)
+
   if (data) {
     return (
       <S.SingleProductContainer>
