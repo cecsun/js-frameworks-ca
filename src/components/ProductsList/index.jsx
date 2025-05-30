@@ -7,17 +7,30 @@ import { CartContext } from '../../context/CartContext';
 import SearchBar from '../SearchBar/index';
 import * as S from './index.styles';
 
+/**
+ * Component that fetches and displays a list of products with search functionality.
+ * Allows adding products to the cart.
+ *
+ * @component
+ * @returns {JSX.Element} The products list with search and add-to-cart features.
+ */
 function ProductsList() {
   const { addToCart } = useContext(CartContext);
   const { data, hasError, isLoading } = useFetch(API_PRODUCTS_URL);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+  // Update filtered products when data changes
   useEffect(() => {
     if (data?.data) {
       setFilteredProducts(data.data);
     }
   }, [data]);
 
+  /**
+   * Filters the products list by title based on the search query.
+   *
+   * @param {string} query - The search query string.
+   */
   const handleSearch = (query) => {
     if (query.length === 0) {
       setFilteredProducts(data.data);
@@ -37,6 +50,11 @@ function ProductsList() {
     return <div>Error loading data</div>;
   }
 
+  /**
+   * Adds a product to the cart.
+   *
+   * @param {Object} productDetails - The product to add to the cart.
+   */
   function handleAddToCartButtonClick(productDetails) {
     addToCart(productDetails);
   }

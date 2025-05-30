@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import * as S from './index.styles';
 
+/**
+ * ContactPage component provides a contact form for users to send a message.
+ * It includes input fields for full name, subject, email, and message, and 
+ * displays a confirmation message upon successful submission.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered contact form page.
+ */
 function ContactPage() {
   const [fullName, setFullName] = useState('');
   const [subject, setSubject] = useState('');
@@ -8,6 +16,12 @@ function ContactPage() {
   const [message, setMessage] = useState('');
   const [formSubmit, setFormSubmit] = useState('');
 
+  /**
+   * Handles the form submission event.
+   * Simulates an API request, logs the form data, resets fields, and shows a confirmation.
+   *
+   * @param {React.FormEvent<HTMLFormElement>} event - The form submission event.
+   */
   function onFormSubmit(event) {
     event.preventDefault();
     const body = {
@@ -16,7 +30,7 @@ function ContactPage() {
       email,
       message,
     };
-  
+
     setTimeout(() => {
       console.log('Form submitted:', body);
       setFormSubmit('Message sent!');
@@ -30,6 +44,11 @@ function ContactPage() {
     }, 500);
   }
 
+  /**
+   * Handles changes to text input fields and updates the corresponding state.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} event - The input change event.
+   */
   function onTextInputChange(event) {
     const value = event.target.value;
     const name = event.target.name;
