@@ -1,4 +1,4 @@
-# Your project title
+# eCom store
 
 ![image](/public/ecom-store.png)
 
