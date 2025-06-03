@@ -31,7 +31,9 @@ This is where you list how to get the project started. It typically just include
 ```bash
 git clone https://github.com/cecsun/js-frameworks-ca.git
 ```
-`cd js-frameworks-ca`
+```
+cd js-frameworks-ca
+```
 
 2. Install the dependencies:
 
@@ -41,7 +43,7 @@ npm install
 
 ### Running
 
-To run the app, run the following commands:
+To run the app, run the following command:
 
 ```bash
 npm run start
